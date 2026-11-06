@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MathSmart – Belajar Matematika SD & SMP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="bar">
+<a class="logo" href="#beranda">🧮 MathSmart</a>
+<nav id="nav"><a href="#beranda">Beranda</a><a href="#kalkulator">Kalkulator</a><a href="#aljabar">Aljabar</a><a href="#spldv">2 Persamaan</a><a href="#grafik">Grafik</a></nav>
+<div class="lv" id="lv"><button data-l="sd" class="on">SD</button><button data-l="smp">SMP</button></div>
+</div></header>
+<main>
+<section id="beranda">
+<div class="hero"><h1>Belajar Matematika Jadi Mudah</h1><p>Semua alat bantu matematika SD & SMP dalam satu tempat: kalkulator dengan langkah, penyelesaian aljabar, sistem 2 persamaan linear, dan grafik. Pilih jenjang SD atau SMP di kanan atas untuk contoh soal yang sesuai.</p></div>
+<div class="grid">
+<a href="#kalkulator"><div class="card"><div class="ic">🔢</div><h3>Kalkulator Langkah</h3><p class="muted">Hitung dan lihat urutan pengerjaan: kurung, pangkat, kali-bagi, tambah-kurang.</p></div></a>
+<a href="#aljabar"><div class="card"><div class="ic">🔤</div><h3>Aljabar</h3><p class="muted">Selesaikan persamaan satu variabel, misalnya 3x − 4 = 2x + 9, lengkap dengan langkahnya.</p></div></a>
+<a href="#spldv"><div class="card"><div class="ic">⚖️</div><h3>2 Persamaan Linear</h3><p class="muted">Cari x dan y dengan metode eliminasi, ada pengecekan dan grafik titik potongnya.</p></div></a>
+<a href="#grafik"><div class="card"><div class="ic">📈</div><h3>Grafik</h3><p class="muted">Gambar grafik y = … beserta tabel nilainya. Bisa dua grafik sekaligus.</p></div></a>
+</div>
+<div class="card" style="margin-top:16px"><h3>Cara pakai</h3><p class="muted">1) Pilih jenjang. 2) Buka menu yang dibutuhkan. 3) Ketik soal atau pilih contoh. 4) Tekan tombol hitung dan baca langkahnya satu per satu. Pecahan ditulis seperti 7/2, dan koma dipakai untuk desimal.</p></div>
+</section>
+
+<section id="kalkulator"><h2>Kalkulator Langkah</h2>
+<div class="card">
+<input type="text" id="cin" placeholder="Contoh: 12 + 8 × 3" inputmode="text" autocomplete="off">
+<div class="keys" id="keys"></div>
+<div class="row"><button class="btn" id="cgo">= Hitung</button><button class="btn s" id="cclr">🗑️ Hapus</button><span class="muted">Contoh:</span><span id="cex"></span></div>
+<div id="cout"></div></div></section>
+
+<section id="aljabar"><h2>Aljabar: Persamaan Satu Variabel</h2>
+<div class="card"><input type="text" id="ain" placeholder="Contoh: 3x - 4 = 2x + 9" autocomplete="off">
+<div class="row"><button class="btn" id="ago">Selesaikan</button><button class="btn s" id="aclr">🗑️ Hapus</button><span class="muted">Contoh:</span><span id="aex"></span></div>
+<p class="muted">Boleh pakai kurung, pecahan seperti (x-1)/2, dan huruf variabel apa saja.</p><div id="aout"></div></div></section>
+
+<section id="spldv"><h2>Sistem 2 Persamaan Linear (x dan y)</h2>
+<div class="two"><div class="card">
+<p class="muted">Bentuk: a·x + b·y = c</p>
+<div class="eqs"><span>a₁</span><span>b₁</span><span>c₁</span><input type="text" id="a1" value="1"><input type="text" id="b1" value="1"><input type="text" id="c1" value="10">
+<span>a₂</span><span>b₂</span><span>c₂</span><input type="text" id="a2" value="1"><input type="text" id="b2" value="-1"><input type="text" id="c2" value="2"></div>
+<div class="row"><button class="btn" id="sgo">Selesaikan</button><button class="btn s" id="sclr">🗑️ Hapus</button><span id="sex"></span></div><div id="sout"></div></div>
+<div class="card"><h3>Grafik</h3><canvas id="scv"></canvas><div class="row"><button class="btn s" data-z="s" data-d="-1">Zoom +</button><button class="btn s" data-z="s" data-d="1">Zoom −</button></div></div></div></section>
+
+<section id="grafik"><h2>Grafik Fungsi</h2>
+<div class="two"><div class="card">
+<label class="muted">Grafik 1 (y =)</label><input type="text" id="g1" value="2x+1">
+<label class="muted">Grafik 2 (boleh kosong)</label><input type="text" id="g2" value="">
+<div class="row"><button class="btn" id="ggo">Gambar</button><button class="btn s" id="gclr">🗑️ Hapus</button><span class="muted">Contoh:</span><span id="gex"></span></div>
+<p class="muted">Bisa pakai + − × ÷ ^ sqrt() abs() dan kurung.</p><div id="gerr"></div>
+<div class="tbl" id="gtb"></div></div>
+<div class="card"><canvas id="gcv"></canvas><div class="row"><button class="btn s" data-z="g" data-d="-1">Zoom +</button><button class="btn s" data-z="g" data-d="1">Zoom −</button></div></div></div></section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
